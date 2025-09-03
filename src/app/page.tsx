@@ -1,103 +1,118 @@
-import Image from "next/image";
-
 export default function Home() {
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="./next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <>
+      {/* Starfield Background */}
+      <div className="stars-container">
+        <div className="stars stars-1"></div>
+        <div className="stars stars-2"></div>
+        <div className="stars stars-3"></div>
+      </div>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="./vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+      {/* Wave Background */}
+      <div>
+        <div className="wave"></div>
+        <div className="wave"></div>
+        <div className="wave"></div>
+      </div>
+
+      <div className="min-h-screen mt-25 relative z-10">
+        <div className="max-w-7xl mx-auto">
+          <div className="space-y-4 p-8">
+            {/* About Section */}
+            <section id="about" className="h-[80vh] bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-900 dark:to-blue-900 flex items-center justify-center p-8 rounded-2xl shadow-2xl border border-white/20 dark:border-gray-700/30">
+              <div className="text-center max-w-4xl">
+                <h2 className="text-4xl font-bold mb-6 text-gray-800 dark:text-white">About Me</h2>
+                <p className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
+                  I'm a passionate developer with a love for creating innovative solutions and beautiful user experiences.
+                  With expertise in modern web technologies, I enjoy turning complex problems into simple, elegant designs.
+                </p>
+              </div>
+            </section>
+
+            {/* Experience Section */}
+            <section id="experience" className="h-[80vh] bg-gradient-to-br from-green-50 to-emerald-100 dark:from-gray-900 dark:to-green-900 flex items-center justify-center p-8 rounded-2xl shadow-2xl border border-white/20 dark:border-gray-700/30">
+              <div className="text-center max-w-4xl">
+                <h2 className="text-4xl font-bold mb-6 text-gray-800 dark:text-white">Experience</h2>
+                <p className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
+                  Over the years, I've gained valuable experience working with various technologies and frameworks.
+                  From frontend development to backend systems, I've contributed to projects that make a real difference.
+                </p>
+              </div>
+            </section>
+
+            {/* Projects Section */}
+            <section id="projects" className="h-[80vh] bg-gradient-to-br from-purple-50 to-violet-100 dark:from-gray-900 dark:to-purple-900 flex items-center justify-center p-8 rounded-2xl shadow-2xl border border-white/20 dark:border-gray-700/30">
+              <div className="text-center max-w-4xl">
+                <h2 className="text-4xl font-bold mb-6 text-gray-800 dark:text-white">Projects</h2>
+                <p className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
+                  Here are some of the exciting projects I've worked on. Each one represents a unique challenge
+                  and an opportunity to learn and grow as a developer.
+                </p>
+              </div>
+            </section>
+
+            {/* Skills Section */}
+            <section id="skills" className="h-[80vh] bg-gradient-to-br from-yellow-50 to-orange-100 dark:from-gray-900 dark:to-yellow-900 flex items-center justify-center p-8 rounded-2xl shadow-2xl border border-white/20 dark:border-gray-700/30">
+              <div className="text-center max-w-4xl">
+                <h2 className="text-4xl font-bold mb-6 text-gray-800 dark:text-white">Skills</h2>
+                <p className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
+                  I've developed a diverse skill set across multiple technologies and frameworks.
+                  From JavaScript and React to Python and cloud technologies, I'm always eager to learn more.
+                </p>
+              </div>
+            </section>
+
+            {/* Education Section */}
+            <section id="education" className="h-[80vh] bg-gradient-to-br from-red-50 to-pink-100 dark:from-gray-900 dark:to-red-900 flex items-center justify-center p-8 rounded-2xl shadow-2xl border border-white/20 dark:border-gray-700/30">
+              <div className="text-center max-w-4xl">
+                <h2 className="text-4xl font-bold mb-6 text-gray-800 dark:text-white">Education</h2>
+                <p className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
+                  My educational journey has been focused on computer science and software engineering.
+                  I believe in continuous learning and staying up-to-date with the latest industry trends.
+                </p>
+              </div>
+            </section>
+
+            {/* Hobbies Section */}
+            <section id="hobbies" className="h-[80vh] bg-gradient-to-br from-teal-50 to-cyan-100 dark:from-gray-900 dark:to-teal-900 flex items-center justify-center p-8 rounded-2xl shadow-2xl border border-white/20 dark:border-gray-700/30">
+              <div className="text-center max-w-4xl">
+                <h2 className="text-4xl font-bold mb-6 text-gray-800 dark:text-white">Hobbies</h2>
+                <p className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
+                  When I'm not coding, I enjoy exploring new technologies, reading about design,
+                  and working on creative projects. I believe that diverse interests make for better developers.
+                </p>
+              </div>
+            </section>
+
+            {/* Contact Section */}
+            <section id="contact" className="h-[80vh] bg-gradient-to-br from-gray-50 to-slate-100 dark:from-gray-900 dark:to-slate-800 flex items-center justify-center p-8 rounded-2xl shadow-2xl border border-white/20 dark:border-gray-700/30">
+              <div className="text-center max-w-4xl">
+                <h2 className="text-4xl font-bold mb-6 text-gray-800 dark:text-white">Contact</h2>
+                <p className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
+                  I'm always interested in new opportunities and collaborations.
+                  Feel free to reach out if you'd like to work together or just have a chat about technology!
+                </p>
+              </div>
+            </section>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="./file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="./window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="./globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+
+        {/* Footer */}
+        <div className="max-w-7xl mx-auto">
+          <div className="space-y-4 p-8">
+            <footer className="bg-gradient-to-br from-gray-50 to-slate-100 dark:from-gray-900 dark:to-slate-800 p-8 rounded-2xl shadow-2xl border border-white/20 dark:border-gray-700/30">
+              <div className="text-center">
+                <p className="text-gray-600 dark:text-gray-400 text-sm">
+                  © {new Date().getFullYear()} Your Name. All rights reserved.
+                </p>
+                <p className="text-gray-500 dark:text-gray-500 text-xs mt-2">
+                  Built with Next.js, TypeScript, and Tailwind CSS
+                </p>
+              </div>
+            </footer>
+          </div>
+        </div>
+      </div>
+    </>
   );
 }
