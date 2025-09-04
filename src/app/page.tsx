@@ -1,3 +1,5 @@
+import AboutMe from "@/components/AboutMe";
+
 export default function Home() {
   return (
     <>
@@ -19,15 +21,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto">
           <div className="space-y-4 p-8">
             {/* About Section */}
-            <section id="about" className="h-[80vh] bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-900 dark:to-blue-900 flex items-center justify-center p-8 rounded-2xl shadow-2xl border border-white/20 dark:border-gray-700/30">
-              <div className="text-center max-w-4xl">
-                <h2 className="text-4xl font-bold mb-6 text-gray-800 dark:text-white">About Me</h2>
-                <p className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
-                  I'm a passionate developer with a love for creating innovative solutions and beautiful user experiences.
-                  With expertise in modern web technologies, I enjoy turning complex problems into simple, elegant designs.
-                </p>
-              </div>
-            </section>
+            <AboutMe />
 
             {/* Experience Section */}
             <section id="experience" className="h-[80vh] bg-gradient-to-br from-green-50 to-emerald-100 dark:from-gray-900 dark:to-green-900 flex items-center justify-center p-8 rounded-2xl shadow-2xl border border-white/20 dark:border-gray-700/30">

@@ -219,3 +219,242 @@ h2 small {
   opacity: 0.7;
   font-weight: normal;
 }
+
+/* Floating Code Elements Animations */
+@keyframes float-right {
+  0% {
+    transform: translateX(-100px) rotate(12deg);
+    opacity: 0;
+  }
+
+  10% {
+    opacity: 0.3;
+  }
+
+  90% {
+    opacity: 0.3;
+  }
+
+  100% {
+    transform: translateX(calc(100vw + 100px)) rotate(12deg);
+    opacity: 0;
+  }
+}
+
+@keyframes float-left {
+  0% {
+    transform: translateX(100px) rotate(-6deg);
+    opacity: 0;
+  }
+
+  10% {
+    opacity: 0.3;
+  }
+
+  90% {
+    opacity: 0.3;
+  }
+
+  100% {
+    transform: translateX(calc(-100vw - 100px)) rotate(-6deg);
+    opacity: 0;
+  }
+}
+
+@keyframes float-diagonal {
+  0% {
+    transform: translateX(-100px) translateY(100px) rotate(45deg);
+    opacity: 0;
+  }
+
+  10% {
+    opacity: 0.25;
+  }
+
+  90% {
+    opacity: 0.25;
+  }
+
+  100% {
+    transform: translateX(calc(100vw + 100px)) translateY(-100px) rotate(45deg);
+    opacity: 0;
+  }
+}
+
+@keyframes float-up {
+  0% {
+    transform: translateY(100px) rotate(-12deg);
+    opacity: 0;
+  }
+
+  10% {
+    opacity: 0.25;
+  }
+
+  90% {
+    opacity: 0.25;
+  }
+
+  100% {
+    transform: translateY(-100px) rotate(-12deg);
+    opacity: 0;
+  }
+}
+
+@keyframes float-down {
+  0% {
+    transform: translateY(-100px) rotate(30deg);
+    opacity: 0;
+  }
+
+  10% {
+    opacity: 0.25;
+  }
+
+  90% {
+    opacity: 0.25;
+  }
+
+  100% {
+    transform: translateY(100px) rotate(30deg);
+    opacity: 0;
+  }
+}
+
+@keyframes float-slow {
+  0% {
+    transform: translateX(-50px) translateY(50px) rotate(-30deg);
+    opacity: 0;
+  }
+
+  10% {
+    opacity: 0.2;
+  }
+
+  90% {
+    opacity: 0.2;
+  }
+
+  100% {
+    transform: translateX(calc(50vw + 50px)) translateY(-50px) rotate(-30deg);
+    opacity: 0;
+  }
+}
+
+.animate-float-right {
+  animation: float-right 15s linear infinite;
+}
+
+.animate-float-left {
+  animation: float-left 18s linear infinite;
+}
+
+.animate-float-diagonal {
+  animation: float-diagonal 20s linear infinite;
+}
+
+.animate-float-up {
+  animation: float-up 12s linear infinite;
+}
+
+.animate-float-down {
+  animation: float-down 14s linear infinite;
+}
+
+.animate-float-slow {
+  animation: float-slow 25s linear infinite;
+}
+
+/* Delayed floating animations */
+.animate-float-right-delayed {
+  animation: float-right 16s linear infinite;
+  animation-delay: 3s;
+}
+
+.animate-float-left-delayed {
+  animation: float-left 19s linear infinite;
+  animation-delay: 5s;
+}
+
+.animate-float-up-delayed {
+  animation: float-up 13s linear infinite;
+  animation-delay: 7s;
+}
+
+.animate-float-down-delayed {
+  animation: float-down 15s linear infinite;
+  animation-delay: 2s;
+}
+
+.animate-float-diagonal-delayed {
+  animation: float-diagonal 21s linear infinite;
+  animation-delay: 4s;
+}
+
+.animate-float-slow-delayed {
+  animation: float-slow 26s linear infinite;
+  animation-delay: 6s;
+}
+
+/* Floating Code Snippets Animations */
+@keyframes code-float-slow {
+
+  0%,
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+
+  25% {
+    transform: translateY(-10px) rotate(1deg);
+  }
+
+  50% {
+    transform: translateY(-5px) rotate(-1deg);
+  }
+
+  75% {
+    transform: translateY(-15px) rotate(0.5deg);
+  }
+}
+
+@keyframes code-float-medium {
+
+  0%,
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+
+  33% {
+    transform: translateY(-8px) rotate(-0.5deg);
+  }
+
+  66% {
+    transform: translateY(-12px) rotate(0.5deg);
+  }
+}
+
+@keyframes code-float-fast {
+
+  0%,
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+
+  50% {
+    transform: translateY(-6px) rotate(1deg);
+  }
+}
+
+.animate-float-slow {
+  animation: code-float-slow 6s ease-in-out infinite;
+}
+
+.animate-float-medium {
+  animation: code-float-medium 4s ease-in-out infinite;
+  animation-delay: 1s;
+}
+
+.animate-float-fast {
+  animation: code-float-fast 3s ease-in-out infinite;
+  animation-delay: 2s;
+}
