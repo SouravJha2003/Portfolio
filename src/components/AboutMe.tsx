@@ -33,9 +33,9 @@ const AboutMe = () => {
                 subtitle: "Professional Growth",
                 description: "I began my career as a VLSI intern, where I developed skills in digital design and verification. Although I had some knowledge of software development at the time, it wasn’t extensive. When I got the opportunity to work on software projects, I embraced it and gradually gained hands-on experience in the field. Building on that foundation, I continued to strengthen my software development skills, which eventually led me to join a startup as a software developer, where I further enhanced my expertise and practical experience.",
                 highlights: [
-                    "VLSI Intern @ VLSIPRO",
-                    "Software Intern @ MARQUEESEMI",
                     "Software Engineer @ MARQUEESEMI",
+                    "Software Intern @ MARQUEESEMI",
+                    "VLSI Intern @ VLSIPRO",
                 ]
             }
         },
@@ -67,9 +67,9 @@ const AboutMe = () => {
         if (cardIndex === 0) {
             return highlightIndex === 4 ? 'png' : 'jpg';
         }
-        // Section 2 (Professional Growth): 2.1.jpeg, 2.2.png, 2.3.png
+        // Section 2 (Professional Growth): 2.1.png, 2.2.png, 2.3.png
         if (cardIndex === 1) {
-            return highlightIndex === 0 ? 'jpeg' : 'png';
+            return 'png';
         }
         // Section 3 (My thoughts): 3.1.png, 3.2.png, 3.3.jpg
         if (cardIndex === 2) {
