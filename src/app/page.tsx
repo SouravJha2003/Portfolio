@@ -1,5 +1,6 @@
 import AboutMe from "@/components/AboutMe";
 import Experience from "@/components/Experience";
+import Projects from "@/components/Projects";
 
 export default function Home() {
   return (
@@ -28,15 +29,7 @@ export default function Home() {
             <Experience />
 
             {/* Projects Section */}
-            <section id="projects" className="h-[80vh] bg-gradient-to-br from-purple-50 to-violet-100 dark:from-gray-900 dark:to-purple-900 flex items-center justify-center p-8 rounded-2xl shadow-2xl border border-white/20 dark:border-gray-700/30">
-              <div className="text-center max-w-4xl">
-                <h2 className="text-4xl font-bold mb-6 text-gray-800 dark:text-white">Projects</h2>
-                <p className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
-                  Here are some of the exciting projects I've worked on. Each one represents a unique challenge
-                  and an opportunity to learn and grow as a developer.
-                </p>
-              </div>
-            </section>
+            <Projects />
 
             {/* Skills Section */}
             <section id="skills" className="h-[80vh] bg-gradient-to-br from-yellow-50 to-orange-100 dark:from-gray-900 dark:to-yellow-900 flex items-center justify-center p-8 rounded-2xl shadow-2xl border border-white/20 dark:border-gray-700/30">
