@@ -1,4 +1,5 @@
 import AboutMe from "@/components/AboutMe";
+import Education from "@/components/Education";
 import Experience from "@/components/Experience";
 import Projects from "@/components/Projects";
 import Skills from "@/components/Skills";
@@ -36,15 +37,7 @@ export default function Home() {
             <Skills />
 
             {/* Education Section */}
-            <section id="education" className="h-[80vh] bg-gradient-to-br from-red-50 to-pink-100 dark:from-gray-900 dark:to-red-900 flex items-center justify-center p-8 rounded-2xl shadow-2xl border border-white/20 dark:border-gray-700/30">
-              <div className="text-center max-w-4xl">
-                <h2 className="text-4xl font-bold mb-6 text-gray-800 dark:text-white">Education</h2>
-                <p className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
-                  My educational journey has been focused on computer science and software engineering.
-                  I believe in continuous learning and staying up-to-date with the latest industry trends.
-                </p>
-              </div>
-            </section>
+            <Education />
 
             {/* Hobbies Section */}
             <section id="hobbies" className="h-[80vh] bg-gradient-to-br from-teal-50 to-cyan-100 dark:from-gray-900 dark:to-teal-900 flex items-center justify-center p-8 rounded-2xl shadow-2xl border border-white/20 dark:border-gray-700/30">

@@ -9,8 +9,6 @@ const Skills = () => {
     const [currentIndex, setCurrentIndex] = useState(0);
     const [canScrollLeft, setCanScrollLeft] = useState(false);
     const [canScrollRight, setCanScrollRight] = useState(true);
-    const [hoveredSkill, setHoveredSkill] = useState<number | null>(null);
-    const [hoveredLibrary, setHoveredLibrary] = useState<number | null>(null);
     const [activeTab, setActiveTab] = useState<'skills' | 'libraries'>('skills');
     const scrollContainerRef = useRef<HTMLDivElement>(null);
 
@@ -314,21 +312,6 @@ const Skills = () => {
         }
     };
 
-    const handleSkillHover = (skillId: number) => {
-        setHoveredSkill(skillId);
-    };
-
-    const handleSkillLeave = () => {
-        setHoveredSkill(null);
-    };
-
-    const handleLibraryHover = (libraryId: number) => {
-        setHoveredLibrary(libraryId);
-    };
-
-    const handleLibraryLeave = () => {
-        setHoveredLibrary(null);
-    };
 
     // Check scroll state on mount and when data changes
     React.useEffect(() => {
@@ -455,11 +438,9 @@ const Skills = () => {
                                 <div
                                     key={item.id}
                                     className="group relative skill-card flex-shrink-0"
-                                    onMouseEnter={() => activeTab === 'skills' ? handleSkillHover(item.id) : handleLibraryHover(item.id)}
-                                    onMouseLeave={() => activeTab === 'skills' ? handleSkillLeave() : handleLibraryLeave()}
                                 >
                                     <div
-                                        className={`relative ${item.bgColor} backdrop-blur-sm border ${item.borderColor} rounded-2xl p-6 hover:bg-white/20 hover:border-white/30 transition-all duration-500 hover:shadow-xl hover:shadow-purple-500/20 cursor-pointer w-80 h-96 flex flex-col`}
+                                        className={`relative ${item.bgColor} backdrop-blur-sm border ${item.borderColor} rounded-2xl p-6 hover:bg-white/20 hover:border-white/30 transition-all duration-500 hover:shadow-xl hover:shadow-purple-500/20 w-80 h-96 flex flex-col`}
                                     >
                                         {/* Background decoration */}
                                         <div className={`absolute inset-0 bg-gradient-to-r ${item.color} opacity-0 group-hover:opacity-10 rounded-2xl transition-all duration-500 -z-10`}></div>
@@ -576,62 +557,6 @@ const Skills = () => {
                                             </div>
                                         )}
 
-                                        {/* Hover Overlay for detailed view */}
-                                        {(hoveredSkill === item.id || hoveredLibrary === item.id) && (
-                                            <div className="absolute inset-0 bg-black/80 backdrop-blur-sm rounded-2xl flex items-center justify-center z-50 transition-all duration-300">
-                                                <div className="relative w-full h-full p-4 flex flex-col items-center justify-center">
-                                                    <div className="text-center">
-                                                        <h4 className="text-white text-xl font-bold mb-4">{item.name}</h4>
-
-                                                        {activeTab === 'skills' && 'proficiency' in item ? (
-                                                            <div className="space-y-3 text-sm">
-                                                                <div className="flex justify-between">
-                                                                    <span className="text-gray-300">Hours Worked:</span>
-                                                                    <span className="text-white font-semibold">{item.hoursWorked}h</span>
-                                                                </div>
-                                                                <div className="flex justify-between">
-                                                                    <span className="text-gray-300">Projects:</span>
-                                                                    <span className="text-white font-semibold">{item.projectsImplemented}</span>
-                                                                </div>
-                                                                <div className="flex justify-between">
-                                                                    <span className="text-gray-300">Lines of Code:</span>
-                                                                    <span className="text-white font-semibold">{item.linesOfCode.toLocaleString()}</span>
-                                                                </div>
-                                                                <div className="flex justify-between">
-                                                                    <span className="text-gray-300">Proficiency:</span>
-                                                                    <span className="text-white font-semibold">{item.proficiency}%</span>
-                                                                </div>
-                                                            </div>
-                                                        ) : activeTab === 'libraries' && 'usage' in item ? (
-                                                            <div className="space-y-3 text-sm">
-                                                                <p className="text-gray-300 mb-3">{item.description}</p>
-                                                                <div className="space-y-2">
-                                                                    <div className="flex justify-between">
-                                                                        <span className="text-gray-300">Projects Used:</span>
-                                                                        <span className="text-white font-semibold">{item.projectsUsed}</span>
-                                                                    </div>
-                                                                    <div className="flex justify-between">
-                                                                        <span className="text-gray-300">Hours Worked:</span>
-                                                                        <span className="text-white font-semibold">{item.hoursWorked}h</span>
-                                                                    </div>
-                                                                </div>
-                                                                <div className="mt-4">
-                                                                    <h5 className="text-white font-semibold mb-2">Key Features:</h5>
-                                                                    <div className="space-y-1">
-                                                                        {item.features.map((feature: string, featureIndex: number) => (
-                                                                            <div key={featureIndex} className="flex items-center text-gray-300">
-                                                                                <span className="text-purple-400 mr-2">•</span>
-                                                                                {feature}
-                                                                            </div>
-                                                                        ))}
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        ) : null}
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        )}
                                     </div>
                                 </div>
                             ))}
