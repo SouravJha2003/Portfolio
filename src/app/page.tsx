@@ -1,6 +1,7 @@
 import AboutMe from "@/components/AboutMe";
 import Experience from "@/components/Experience";
 import Projects from "@/components/Projects";
+import Skills from "@/components/Skills";
 
 export default function Home() {
   return (
@@ -32,15 +33,7 @@ export default function Home() {
             <Projects />
 
             {/* Skills Section */}
-            <section id="skills" className="h-[80vh] bg-gradient-to-br from-yellow-50 to-orange-100 dark:from-gray-900 dark:to-yellow-900 flex items-center justify-center p-8 rounded-2xl shadow-2xl border border-white/20 dark:border-gray-700/30">
-              <div className="text-center max-w-4xl">
-                <h2 className="text-4xl font-bold mb-6 text-gray-800 dark:text-white">Skills</h2>
-                <p className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
-                  I've developed a diverse skill set across multiple technologies and frameworks.
-                  From JavaScript and React to Python and cloud technologies, I'm always eager to learn more.
-                </p>
-              </div>
-            </section>
+            <Skills />
 
             {/* Education Section */}
             <section id="education" className="h-[80vh] bg-gradient-to-br from-red-50 to-pink-100 dark:from-gray-900 dark:to-red-900 flex items-center justify-center p-8 rounded-2xl shadow-2xl border border-white/20 dark:border-gray-700/30">
