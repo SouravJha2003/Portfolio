@@ -1,5 +1,6 @@
 'use client';
-import { faBriefcase, faChartLine, faTimes, faUser } from '@fortawesome/free-solid-svg-icons';
+import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
+import { faBriefcase, faChartLine, faEnvelope, faTimes, faUser } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useState } from 'react';
 import AnimatedCodeBackground from './AnimatedCodeBackground';
@@ -9,6 +10,27 @@ import TypingAnimation from './TypingAnimation';
 const AboutMe = () => {
     const [isExpanded, setIsExpanded] = useState(false);
     const [hoveredHighlight, setHoveredHighlight] = useState<{ cardIndex: number, highlightIndex: number } | null>(null);
+
+    const socialLinks = [
+        {
+            name: "Gmail",
+            icon: faEnvelope,
+            url: "mailto:sk7381jha@gmail.com",
+            color: "hover:bg-red-500"
+        },
+        {
+            name: "LinkedIn",
+            icon: faLinkedin,
+            url: "https://www.linkedin.com/in/sourav-kumar-jha-mqs/",
+            color: "hover:bg-blue-600"
+        },
+        {
+            name: "GitHub",
+            icon: faGithub,
+            url: "https://github.com/SouravJha2003",
+            color: "hover:bg-gray-700"
+        }
+    ];
 
     const cards = [
         {
@@ -31,7 +53,7 @@ const AboutMe = () => {
             icon: faChartLine,
             content: {
                 subtitle: "Professional Growth",
-                description: "I began my career as a VLSI intern, where I developed skills in digital design and verification. Although I had some knowledge of software development at the time, it wasn’t extensive. When I got the opportunity to work on software projects, I embraced it and gradually gained hands-on experience in the field. Building on that foundation, I continued to strengthen my software development skills, which eventually led me to join a startup as a software developer, where I further enhanced my expertise and practical experience.",
+                description: "I began my career as a VLSI intern, where I developed skills in digital design and verification. Although I had some knowledge of software development at the time, it wasn't extensive. When I got the opportunity to work on software projects, I embraced it and gradually gained hands-on experience in the field. Building on that foundation, I continued to strengthen my software development skills, which eventually led me to join a startup as a software developer, where I further enhanced my expertise and practical experience.",
                 highlights: [
                     "Software Engineer @ MARQUEESEMI",
                     "Software Intern @ MARQUEESEMI",
@@ -213,7 +235,26 @@ const AboutMe = () => {
                                                     />
                                                 </div>
                                                 {/* Subtitle */}
-                                                <p className="text-gray-600 dark:text-gray-300 text-xl font-semibold">Brutal Jha</p>
+                                                <p className="text-gray-600 dark:text-gray-300 text-xl font-semibold mb-4">Sourav Kumar Jha</p>
+
+                                                {/* Social Media Icons */}
+                                                <div className="flex justify-center space-x-4">
+                                                    {socialLinks.map((social, index) => (
+                                                        <a
+                                                            key={social.name}
+                                                            href={social.url}
+                                                            target="_blank"
+                                                            rel="noopener noreferrer"
+                                                            className={`w-8 h-8 rounded-full bg-gray-200 dark:bg-gray-700 flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-lg ${social.color} group`}
+                                                            title={social.name}
+                                                        >
+                                                            <FontAwesomeIcon
+                                                                icon={social.icon}
+                                                                className="text-gray-600 dark:text-gray-300 group-hover:text-white text-sm transition-colors duration-300"
+                                                            />
+                                                        </a>
+                                                    ))}
+                                                </div>
                                             </div>
                                         </div>
 

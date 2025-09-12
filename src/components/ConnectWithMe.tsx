@@ -1,5 +1,6 @@
 'use client';
-import { faChevronLeft, faChevronRight, faCode, faEnvelope, faHeart, faQuoteLeft, faQuoteRight, faUser } from '@fortawesome/free-solid-svg-icons';
+import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
+import { faChevronLeft, faChevronRight, faEnvelope, faExternalLinkAlt, faHeart, faQuoteLeft, faQuoteRight } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useEffect, useState } from 'react';
 import TypingAnimation from './TypingAnimation';
@@ -12,36 +13,31 @@ const ConnectWithMe = () => {
     const testimonials = [
         {
             id: 1,
-            name: "Sarah Johnson",
-            role: "Senior Developer",
-            company: "TechCorp",
+            name: "Abinash Sahu",
+            role: "Senior Manager",
+            company: "MarqueeSemi",
             content: "Sourav is an exceptional React Native developer. His attention to detail and problem-solving skills are outstanding. He delivered our mobile app ahead of schedule with zero bugs.",
-            avatar: "SJ"
+            image: "/testimonial/abinash.png",
+            link: "https://www.linkedin.com/in/abinash-sahu-258272b4/"
         },
         {
             id: 2,
-            name: "Michael Chen",
-            role: "Product Manager",
-            company: "StartupXYZ",
+            name: "Mukesh Sukla",
+            role: "Director",
+            company: "VLSIPRO technology",
             content: "Working with Sourav was a game-changer for our project. His technical expertise and collaborative approach made complex features seem effortless to implement.",
-            avatar: "MC"
+            image: "/testimonial/mukesh.png",
+            link: "https://www.linkedin.com/in/mukesh-sukla-60793061/"
         },
         {
             id: 3,
-            name: "Emily Rodriguez",
-            role: "UI/UX Designer",
-            company: "DesignStudio",
+            name: "Zolthealth",
+            role: "Project Head",
+            company: "ZOLT",
             content: "Sourav's ability to translate design concepts into pixel-perfect mobile applications is remarkable. He's always open to feedback and suggestions for improvement.",
-            avatar: "ER"
+            image: "/testimonial/zolthealth.png",
+            link: "https://www.google.com"
         },
-        {
-            id: 4,
-            name: "David Thompson",
-            role: "CTO",
-            company: "InnovateLab",
-            content: "Sourav's code quality and architecture decisions are top-notch. He consistently delivers scalable solutions that exceed our expectations. Highly recommended!",
-            avatar: "DT"
-        }
     ];
 
     const contactLinks = [
@@ -54,14 +50,14 @@ const ConnectWithMe = () => {
         },
         {
             name: "LinkedIn",
-            icon: faUser,
+            icon: faLinkedin,
             url: "https://www.linkedin.com/in/sourav-kumar-jha-mqs/",
             color: "from-gray-200 to-gray-300 dark:from-gray-600 dark:to-gray-700",
             hoverColor: "hover:from-gray-300 hover:to-gray-400 dark:hover:from-gray-700 dark:hover:to-gray-800"
         },
         {
             name: "GitHub",
-            icon: faCode,
+            icon: faGithub,
             url: "https://github.com/SouravJha2003",
             color: "from-gray-200 to-gray-300 dark:from-gray-600 dark:to-gray-700",
             hoverColor: "hover:from-gray-300 hover:to-gray-400 dark:hover:from-gray-700 dark:hover:to-gray-800"
@@ -198,42 +194,55 @@ const ConnectWithMe = () => {
                                 </div>
 
                                 <div
-                                    className="relative h-48 overflow-hidden"
+                                    className="relative h-48 overflow-visible"
                                     onMouseEnter={() => setIsHovered(true)}
                                     onMouseLeave={() => setIsHovered(false)}
                                 >
-                                    <div
-                                        className="testimonial-slide absolute inset-0 flex flex-col justify-center"
+                                    <a
+                                        href={testimonials[currentTestimonial].link}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="testimonial-slide absolute inset-0 flex flex-col justify-center cursor-pointer group transition-all duration-300 rounded-lg p-2 -m-2"
                                         key={currentTestimonial}
                                     >
                                         <div className="flex items-start space-x-4">
-                                            <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center text-white font-bold text-lg">
-                                                {testimonials[currentTestimonial].avatar}
+                                            <div className="w-12 h-12 rounded-full overflow-hidden group-hover:scale-105 transition-transform duration-300 border-2 border-white/20">
+                                                <img
+                                                    src={testimonials[currentTestimonial].image}
+                                                    alt={testimonials[currentTestimonial].name}
+                                                    className="w-full h-full object-cover"
+                                                />
                                             </div>
                                             <div className="flex-1">
-                                                <h4 className="font-semibold text-gray-800 dark:text-white">
-                                                    {testimonials[currentTestimonial].name}
-                                                </h4>
+                                                <div className="flex items-center space-x-2">
+                                                    <h4 className="font-semibold text-gray-800 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300">
+                                                        {testimonials[currentTestimonial].name}
+                                                    </h4>
+                                                    <FontAwesomeIcon
+                                                        icon={faExternalLinkAlt}
+                                                        className="text-xs text-gray-400 group-hover:text-blue-500 dark:group-hover:text-blue-400 transition-colors duration-300 opacity-0 group-hover:opacity-100"
+                                                    />
+                                                </div>
                                                 <p className="text-sm text-gray-600 dark:text-gray-400">
                                                     {testimonials[currentTestimonial].role} at {testimonials[currentTestimonial].company}
                                                 </p>
                                             </div>
                                         </div>
 
-                                        <div className="mt-4 relative">
+                                        <div className="mt-4 relative px-4 py-2">
                                             <FontAwesomeIcon
                                                 icon={faQuoteLeft}
-                                                className="absolute -top-2 -left-2 text-blue-400/30 text-2xl"
+                                                className="absolute top-0 left-0 text-blue-400/30 text-2xl group-hover:text-blue-500/50 transition-colors duration-300"
                                             />
-                                            <p className="text-gray-700 dark:text-gray-300 leading-relaxed pl-6">
+                                            <p className="text-gray-700 dark:text-gray-300 leading-relaxed pl-6 pr-6">
                                                 {testimonials[currentTestimonial].content}
                                             </p>
                                             <FontAwesomeIcon
                                                 icon={faQuoteRight}
-                                                className="absolute -bottom-2 -right-2 text-blue-400/30 text-2xl"
+                                                className="absolute bottom-0 right-0 text-blue-400/30 text-2xl group-hover:text-blue-500/50 transition-colors duration-300"
                                             />
                                         </div>
-                                    </div>
+                                    </a>
                                 </div>
 
                                 {/* Dots indicator */}
