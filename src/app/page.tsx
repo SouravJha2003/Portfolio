@@ -1,4 +1,5 @@
 import AboutMe from "@/components/AboutMe";
+import Achievement from "@/components/Achievement";
 import Education from "@/components/Education";
 import Experience from "@/components/Experience";
 import Projects from "@/components/Projects";
@@ -39,16 +40,8 @@ export default function Home() {
             {/* Education Section */}
             <Education />
 
-            {/* Hobbies Section */}
-            <section id="hobbies" className="h-[80vh] bg-gradient-to-br from-teal-50 to-cyan-100 dark:from-gray-900 dark:to-teal-900 flex items-center justify-center p-8 rounded-2xl shadow-2xl border border-white/20 dark:border-gray-700/30">
-              <div className="text-center max-w-4xl">
-                <h2 className="text-4xl font-bold mb-6 text-gray-800 dark:text-white">Hobbies</h2>
-                <p className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
-                  When I'm not coding, I enjoy exploring new technologies, reading about design,
-                  and working on creative projects. I believe that diverse interests make for better developers.
-                </p>
-              </div>
-            </section>
+            {/* Achievement Section */}
+            <Achievement />
 
             {/* Contact Section */}
             <section id="contact" className="h-[80vh] bg-gradient-to-br from-gray-50 to-slate-100 dark:from-gray-900 dark:to-slate-800 flex items-center justify-center p-8 rounded-2xl shadow-2xl border border-white/20 dark:border-gray-700/30">
