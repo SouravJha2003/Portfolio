@@ -27,7 +27,7 @@ export default function Navbar({ scrollProgress = 0 }: NavbarProps) {
         { id: 3, name: 'Skills', icon: faBolt },
         { id: 4, name: 'Education', icon: faGraduationCap },
         { id: 5, name: 'Achievements', icon: faPalette },
-        { id: 6, name: 'Contact', icon: faEnvelope },
+        { id: 6, name: 'Connect', icon: faEnvelope },
     ];
 
     // Throttle function for better performance
